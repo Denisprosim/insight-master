@@ -1,0 +1,80 @@
+body {
+    background-image: url(../img/mountains.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.main-panel {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    height: 80px;
+    background-color:rgba(49, 49, 49, 0.247);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: fit-content;
+    border: 1px solid rgba(185, 181, 181, 0.507);
+    gap: 0.5rem;
+    border-radius: 15px;
+    
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
+     0 4px 18px 0 rgba(0, 0, 0, 0.19);
+}
+#apps-container {
+    margin-top: 100px;
+    background-color: #333;
+    max-width: fit-content;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: auto;
+}
+.hidden {
+    display: none;
+}
+.test {
+    background-color: #333;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+.box {
+    width: 70px;
+    height: 70px;
+}
+.icon { 
+    place-self: center;
+    background-size: cover;
+    height: 70px;
+    width: 70px;  
+    border-radius: 10px;
+    transition: all .2s ease-in-out;  
+}
+.icon:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.icon:active {
+    transform: scale(0.9);
+  }
+.menu {
+    background-image: url(../img/finder.png);
+}
+.mail {
+    background-image: url(../img/mail.png);
+}
+.github {
+    background-image: url(../img/github.png);
+}
+.appstore {
+    background-image: url(../img/appstore.png);
+    border: none;
+    background-color: transparent;
+}
+.youtube {
+    background-image: url(../img/youtube.png);
+}

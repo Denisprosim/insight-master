@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="./src/js/control.js" defer></script>
+    <script src="./src/js/main.js"></script>
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="main-panel place">
+            <div class="icon menu" draggable="true"></div>
+            <div class="icon mail" draggable="true" onclick="window.location.href='mailto:misuraskate@seznam.cz?subject=ahoj'"></div>
+            <div class="icon github" draggable="true" onclick="window.location.href='https://github.com/Denisprosim'"></div>
+            <button class="icon appstore" onclick="showApps()"></button>
+            
+        </div>
+        <div id="apps-container" class="hidden">
+            <div class="box place hidden"><div class="icon youtube" draggable="true"></div></div>
+            <div class="box place hidden"></div>
+            <div class="box place hidden"></div>
+            <div class="box place hidden"></div>
+            <div class="box place hidden"></div>
+            <div class="box place hidden"></div>
+            <div class="box place hidden"></div>
+            <div class="box place hidden"></div>
+        </div>
+        
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>
