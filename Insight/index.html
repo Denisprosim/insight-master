@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
     <script src="./src/js/control.js" defer></script>
-    <script src="./src/js/main.js"></script>
+    
     <title>Insight</title>
 </head>
 
@@ -15,18 +15,22 @@
     <header>
     </header>
     <main>
-        <div id="app-window">
-            <div class="dark-panel">
+        <div id="safari">                        
+            <div class="safari-panel">
+                <div class="resizer"> </div>
                 <div class="dots">
                     <div class="dot red"></div>
                     <div class="dot yellow"></div>
                     <div class="dot green"></div>
                 </div> 
             </div>
+            <div class="safari-content">
+
+            </div>
         </div>
         <div id="apps-container" class="hidden">
             <div class="box place hidden"><div class="icon youtube" draggable="true" onclick="window.location.href='../MyTube/index.html'"></div></div>
-            <div class="box place hidden"></div>
+            <div class="box place hidden"><div class="icon menu" draggable="true"></div></div>
             <div class="box place hidden"></div>
             <div class="box place hidden"></div>
             <div class="box place hidden"></div>
@@ -37,12 +41,12 @@
     </main>
     <footer>
         <div class="main-panel place">
-            <div class="icon menu" draggable="true"></div>
+            <button class="icon safari" draggable="true" onclick="showApp('hello')"></button>
             <div class="icon mail" draggable="true" onclick="window.location.href='mailto:misuraskate@seznam.cz?subject=ahoj'"></div>
             <div class="icon github" draggable="true" onclick="window.location.href='https://github.com/Denisprosim'"></div>
-            <button class="icon appstore" onclick="showApps()"></button>           
+            <button class="icon appstore" onclick="showApp()"></button>           
         </div>
     </footer>
 </body>
-
+<script src="./src/js/main.js"></script>
 </html>

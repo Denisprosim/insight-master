@@ -27,7 +27,7 @@ body {
      0 4px 18px 0 rgba(0, 0, 0, 0.19);
 
 }
-#app-window {
+#safari{
     width: 500px;
     height: 400px;
     position: absolute;
@@ -42,7 +42,17 @@ body {
     backdrop-filter: blur(40px);
 
 }
-.dark-panel {
+.resizer {
+    position: relative;
+    float: right;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+}
+.resizer:hover {
+    cursor: sw-resize;
+}
+.safari-panel {
     position: relative;
     width: auto;
     height: 30px;
@@ -109,20 +119,16 @@ body {
 .icon:active {
     transform: scale(0.9);
   }
-.menu {
-    background-image: url(../img/finder.png);
-}
-.mail {
-    background-image: url(../img/mail.png);
-}
-.github {
-    background-image: url(../img/github.png);
-}
-.appstore {
-    background-image: url(../img/appstore.png);
+
+.menu {background-image: url(../img/finder.png);}
+.mail {background-image: url(../img/mail.png);}
+.github {background-image: url(../img/github.png);}
+.appstore {background-image: url(../img/appstore.png);}
+.youtube {background-image: url(../img/youtube.png);}
+.safari {background-image: url(../img/safari.png);}
+
+.safari, .appstore {
     border: none;
     background-color: transparent;
-}
-.youtube {
-    background-image: url(../img/youtube.png);
+    
 }
