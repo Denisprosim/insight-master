@@ -6,23 +6,19 @@ $(document).ready(() => {
   const videoContainer = document.getElementById('video-container');
   const loadingIndicator = document.getElementById('progress-bar');
   const channelsDiv = document.getElementById('channel-list');
+  var channels = [];
 
-  const channels = JSON.parse(localStorage.channels);
-  console.log('Generate field ' + channels);
-  let output = '<p>Saved channels:</p>';
-  channels.forEach(item => {
-    output += `
-    <li id="${item}">${item}</li>`
-  });
-  channelsDiv.innerHTML = output;
+  if(localStorage.channels !== undefined) {
+    channels = JSON.parse(localStorage.channels);
+  }
 
+  showSavedChannels(channels);
 
   channelForm.addEventListener('submit', e => {
     e.preventDefault();
     const channel = channelInput.value;
     loadingIndicator.innerHTML = '<div class="indeterminate red"></div>';
     getChannel(channel);
-
   });
 
   function numberWithCommas(x) {
@@ -84,10 +80,10 @@ $(document).ready(() => {
   function showSavedChannels(channels) {
     localStorage.setItem('channels', JSON.stringify(channels));
 
-    let output = '<p>Saved channels:</p>';
+    let output = '';
     channels.forEach(item => {
       output += `
-      <li id="${item}">${item}</li>`
+      <li id="${item}" class="channel-item">${item}</li>`
     });
     console.log(allStorage());
     channelsDiv.innerHTML = output;
@@ -100,8 +96,6 @@ $(document).ready(() => {
       showSavedChannelInfo(e.target.id);
     }
   });
-
-
 
   function showSavedChannelInfo(channel) {
     console.log(channel);
@@ -156,8 +150,3 @@ $(document).ready(() => {
       })
   }
 });
-
-function ShowHideDiv(checkbox) {
-  videoContainer.style.display = checkbox.checked ? "block" : "none";
-
-}
