@@ -57,11 +57,19 @@ containers.forEach(container => {
 
 function showApp(elementId) {
   var app = document.getElementById(elementId);
-
+  
   if (app.classList.contains('hidden')) {
     app.classList.remove('hidden');
+    app.classList.add('grow');
+    setTimeout(function() {
+      app.classList.remove('grow');
+    }, 200);
   } else {
-    app.classList.add('hidden');
+    app.classList.add('shrink');
+    setTimeout(function() {
+      app.classList.remove('shrink');
+      app.classList.add('hidden');
+    }, 200);
   }
 }
 
@@ -75,5 +83,4 @@ function maximalize(elementId) {
     app.classList.remove('windowed');
   }
 }
-
 

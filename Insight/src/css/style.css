@@ -29,13 +29,42 @@ body {
      0 4px 18px 0 rgba(0, 0, 0, 0.19);
 
 }
+
 #safari {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
     background-color:#2a303cec;
     backdrop-filter: blur(40px);
+}
+@keyframes grow {
+    0% {
+        transform: scale(0);    
+    }
 
+    100% {
+        transform: scale(1); 
+    }
+}
+.hidden {
+    display: none;
+}
+.grow {
+    animation: grow 0.2s ease-out;
+}
+.shrink {
+    animation: shrink 0.2s ease-in;
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(1);    
+    }
+
+    100% {
+        transform: scale(0);
+        display: none;
+        
+    }
 }
 .windowed {
     position: absolute;
@@ -59,6 +88,7 @@ body {
     background-color:#343537;
     background-color: linear-gradient(#323234, #38393b);
     box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
+    
 }
 .resizer {
     position: relative;
@@ -101,9 +131,7 @@ body {
     grid-template-columns: auto auto auto auto;
     margin: auto;
 }
-.hidden {
-    display: none;
-}
+
 .box {
     width: 60px;
     height: 60px;
@@ -125,6 +153,7 @@ body {
 .icon:active {
     transform: scale(0.9);
 }
+
 
 .menu {background-image: url(../img/finder.png);}
 .mail {background-image: url(../img/mail.png);}
