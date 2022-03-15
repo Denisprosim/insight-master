@@ -15,20 +15,20 @@
     <header>
     </header>
     <main>
-        <div id="safari">                        
+        <div id="safari" class="windowed">                        
             <div class="safari-panel">
                 <div class="resizer"> </div>
                 <div class="dots">
                     <div class="dot red"></div>
-                    <div class="dot yellow"></div>
-                    <div class="dot green"></div>
+                    <div class="dot yellow" onclick="showApp('safari')"></div>
+                    <div class="dot green" onclick="maximalize('safari')"></div>
                 </div> 
             </div>
             <div class="safari-content">
-
             </div>
         </div>
-        <div id="apps-container" class="hidden">
+
+        <div id="appstore" class="hidden">
             <div class="box place hidden"><div class="icon youtube" draggable="true" onclick="window.location.href='../MyTube/index.html'"></div></div>
             <div class="box place hidden"><div class="icon menu" draggable="true"></div></div>
             <div class="box place hidden"></div>
@@ -41,10 +41,10 @@
     </main>
     <footer>
         <div class="main-panel place">
-            <button class="icon safari" draggable="true" onclick="showApp('hello')"></button>
-            <div class="icon mail" draggable="true" onclick="window.location.href='mailto:misuraskate@seznam.cz?subject=ahoj'"></div>
-            <div class="icon github" draggable="true" onclick="window.location.href='https://github.com/Denisprosim'"></div>
-            <button class="icon appstore" onclick="showApp()"></button>           
+            <button class="icon safari" draggable="true" onclick="showApp('safari')"></button>
+            <button class="icon mail" draggable="true" onclick="window.location.href='mailto:misuraskate@seznam.cz?subject=ahoj'"></button>
+            <button class="icon github" draggable="true" onclick="window.location.href='https://github.com/Denisprosim'"></button>
+            <button class="icon appstore" onclick="showApp('appstore')"></button>           
         </div>
     </footer>
 </body>

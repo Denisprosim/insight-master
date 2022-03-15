@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     background-image: url(../img/mountains.jpg);
     background-size: cover;
     background-position: center center;
@@ -9,12 +10,14 @@ body {
     position: absolute;
     top: 90%;
     left: 50%;
+    z-index: 10;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    height: 80px;
+    height: auto;
     background-color:rgba(49, 49, 49, 0.247);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -22,25 +25,40 @@ body {
     border: 1px solid rgba(185, 181, 181, 0.507);
     gap: 0.5rem;
     border-radius: 15px;
-    
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
      0 4px 18px 0 rgba(0, 0, 0, 0.19);
 
 }
-#safari{
-    width: 500px;
-    height: 400px;
-    position: absolute;
-    top: 30%;
-    left: 50%;
+#safari {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    border: 1px solid rgba(185, 181, 181, 0.507);
-    border-radius: 10px;
     background-color:#2a303cec;
     backdrop-filter: blur(40px);
 
+}
+.windowed {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    border: 1px solid rgba(185, 181, 181, 0.507);
+    border-radius: 10px;
+}
+.fullsize {
+    position: static;
+    width: 100%;
+    height: 100vh;
+}
+.safari-panel {
+    position: relative;
+    width: auto;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color:#343537;
+    background-color: linear-gradient(#323234, #38393b);
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
 }
 .resizer {
     position: relative;
@@ -51,15 +69,6 @@ body {
 }
 .resizer:hover {
     cursor: sw-resize;
-}
-.safari-panel {
-    position: relative;
-    width: auto;
-    height: 30px;
-    border-radius: 10px 10px 0 0;
-    background-color:#343537;
-    background-color: linear-gradient(#323234, #38393b);
-    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
 }
 .dots {
     position: relative;
@@ -84,7 +93,7 @@ body {
 .red {background-color: #fc5950;}
 .yellow {background-color: #e4c128;}
 
-#apps-container {
+#appstore {
     margin-top: 100px;
     background-color: #333;
     max-width: fit-content;
@@ -95,20 +104,17 @@ body {
 .hidden {
     display: none;
 }
-.test {
-    background-color: #333;
-    padding: 1rem;
-    margin-top: 1rem;
-}
 .box {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 }
 .icon { 
     place-self: center;
     background-size: cover;
-    height: 70px;
-    width: 70px;  
+    border: none;
+    background-color: transparent;
+    height: 65px;
+    width: 65px;  
     border-radius: 10px;
     transition: all .2s ease-in-out;  
 }
@@ -118,7 +124,7 @@ body {
 }
 .icon:active {
     transform: scale(0.9);
-  }
+}
 
 .menu {background-image: url(../img/finder.png);}
 .mail {background-image: url(../img/mail.png);}
@@ -126,9 +132,3 @@ body {
 .appstore {background-image: url(../img/appstore.png);}
 .youtube {background-image: url(../img/youtube.png);}
 .safari {background-image: url(../img/safari.png);}
-
-.safari, .appstore {
-    border: none;
-    background-color: transparent;
-    
-}

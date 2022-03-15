@@ -1,12 +1,14 @@
 const draggables = document.querySelectorAll('.icon');
 const containers = document.querySelectorAll('.place');
-const appContainer = document.getElementById('apps-container');
+const appContainer = document.getElementById('appstore');
+const safariPanel = document.querySelector('.safari-panel')
 const safari = document.getElementById('safari');
 const boxes = document.querySelectorAll('.box');
 
-safari.addEventListener('mousedown', mousedown);
+safariPanel.addEventListener('mousedown', mousedown);
 
 function mousedown(e) {
+
   window.addEventListener('mousemove',mousemove);
   window.addEventListener('mouseup',mouseup);
 
@@ -14,6 +16,8 @@ function mousedown(e) {
   let prevY = e.clientY;
 
   function mousemove(e) {
+
+
     let newX = prevX - e.clientX;
     let newY = prevY - e.clientY;
 
@@ -51,23 +55,25 @@ containers.forEach(container => {
   });
 })
 
-function showApp(divId) {
-  console.log(divId);
+function showApp(elementId) {
+  var app = document.getElementById(elementId);
 
-if (app.classList.contains('hidden')) {
-  app.classList.remove('hidden');
-  boxes.forEach(box => {
-    box.classList.remove('hidden');
-  })
-  
-  console.log('pridat');
-} else {
-  console.log('ostranit');
-  app.classList.add('hidden');
-  boxes.forEach(box => {
-    box.classList.add('hidden');
-  })
+  if (app.classList.contains('hidden')) {
+    app.classList.remove('hidden');
+  } else {
+    app.classList.add('hidden');
+  }
 }
+
+function maximalize(elementId) {
+  var app = document.getElementById(elementId);
+  if (app.classList.contains('fullsize')) {
+    app.classList.remove('fullsize');
+    app.classList.add('windowed');
+  } else {
+    app.classList.add('fullsize');
+    app.classList.remove('windowed');
+  }
 }
 
 
