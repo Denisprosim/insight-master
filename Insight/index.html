@@ -6,49 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/portfolio.css">
     <script src="./src/js/control.js" defer></script>
-    
+
     <title>Insight</title>
 </head>
 
 <body>
-    <header>
-        <div class="animation">
-            
-        </div>
-    </header>
+    <footer>
+
+    </footer>
     <main>
-        <div id="safari" class="windowed">                        
+        <div id="safari" class="fullsize">
+            <div class="resizer se"> </div>
             <div class="safari-panel">
-                <div class="resizer"> </div>
                 <div class="dots">
                     <div class="dot red"></div>
                     <div class="dot yellow" onclick="showApp('safari')"></div>
                     <div class="dot green" onclick="maximalize('safari')"></div>
-                </div> 
+                </div>
             </div>
             <div class="safari-content">
+                <div class="safari-content-header">                  
+                </div>
+                <div class="safari-content-main">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aut molestias ullam? Vitae praesentium blanditiis itaque, assumenda ad velit, autem libero vero nobis, ipsam sed unde eius. Id, natus similique!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aut molestias ullam? Vitae praesentium blanditiis itaque, assumenda ad velit, autem libero vero nobis, ipsam sed unde eius. Id, natus similique!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aut molestias ullam? Vitae praesentium blanditiis itaque, assumenda ad velit, autem libero vero nobis, ipsam sed unde eius. Id, natus similique!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aut molestias ullam? Vitae praesentium blanditiis itaque, assumenda ad velit, autem libero vero nobis, ipsam sed unde eius. Id, natus similique!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aut molestias ullam? Vitae praesentium blanditiis itaque, assumenda ad velit, autem libero vero nobis, ipsam sed unde eius. Id, natus similique!</p>
+                </div>
+                <div class="safari-content-footer"></div>
             </div>
         </div>
-
-
         <div id="appstore" class="hidden">
-            <div class="box place hidden"><div class="icon youtube" draggable="true" onclick="window.location.href='../MyTube/index.html'"></div></div>
-            <div class="box place hidden"><div class="icon menu" draggable="true"></div></div>
+            <div class="box place hidden">
+                <div class="icon youtube" draggable="true" onclick="window.location.href='../MyTube/index.html'"></div>
+            </div>
+            <div class="box place hidden">
+                <div class="icon menu" draggable="true"></div>
+            </div>
             <div class="box place hidden"></div>
             <div class="box place hidden"></div>
             <div class="box place hidden"></div>
             <div class="box place hidden"></div>
             <div class="box place hidden"></div>
             <div class="box place hidden"></div>
-        </div>       
+        </div>
     </main>
     <footer>
         <div class="main-panel place">
             <button class="icon safari" draggable="true" onclick="showApp('safari')"></button>
-            <button class="icon mail" draggable="true" onclick="window.location.href='mailto:misuraskate@seznam.cz?subject=ahoj'"></button>
-            <button class="icon github" draggable="true" onclick="window.location.href='https://github.com/Denisprosim'"></button>
-            <button class="icon appstore" onclick="showApp('appstore')"></button>           
+            <button class="icon mail" draggable="true"
+                onclick="window.location.href='mailto:misuraskate@seznam.cz?subject=ahoj'"></button>
+            <button class="icon github" draggable="true"
+                onclick="window.location.href='https://github.com/Denisprosim'"></button>
+            <button class="icon appstore" onclick="showApp('appstore')"></button>
         </div>
     </footer>
 </body>
