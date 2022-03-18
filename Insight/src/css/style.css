@@ -7,7 +7,7 @@ body {
     background-attachment: fixed;
 }
 .main-panel {
-    position: absolute;
+    position: fixed;
     top: 90%;
     left: 50%;
     z-index: 10;
@@ -15,7 +15,7 @@ body {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     height: auto;
-    background-color:rgba(49, 49, 49, 0.247);
+    background-color:rgba(49, 49, 49, 0.534);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     display: flex;

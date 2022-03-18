@@ -1,0 +1,6 @@
+.safari-content {
+    height: inherit;
+    min-height: inherit;
+    overflow: scroll;    
+    background-color: white;
+}
