@@ -26,7 +26,11 @@ function mousedown(e) {
       const rect = safari.getBoundingClientRect();
 
       safari.style.left = rect.left - newX + "px";
-      safari.style.top = rect.top - newY + "px";
+      if(e.clientY < 0) {   
+        safari.style.top = 0;
+      } else {
+        safari.style.top = rect.top - newY + "px";
+      }
 
       prevX = e.clientX;
       prevY = e.clientY;
@@ -60,6 +64,10 @@ for (let resizer of resizers) {
           safari.style.width = (e.clientX - safari.offsetLeft) + 'px';
           safari.style.height = (e.clientY - safari.offsetTop) + 'px';     
       }
+
+      if (currentResizer.classList.contains('ne')) {
+        safari.style.width = (e.clientX - safari.offsetLeft) + 'px';   
+    }
 
       prevX = e.clientX;
       prevY = e.clientY;
@@ -95,19 +103,29 @@ containers.forEach(container => {
 function showApp(elementId) {
   var app = document.getElementById(elementId);
 
-  if (app.classList.contains('hidden')) {
-    app.classList.remove('hidden');
-    app.classList.add('grow-animation');
-    setTimeout(function () {
-      app.classList.remove('grow-animation');
-    }, 200);
-  } else {
-    app.classList.add('shrink-animation');
-    setTimeout(function () {
-      app.classList.remove('shrink-animation');
+  if(elementId == "appstore") {
+    if (app.classList.contains('hidden')) {
+      app.classList.remove('hidden');
+    } else {
       app.classList.add('hidden');
-    }, 200);
   }
+  } else {
+    if (app.classList.contains('hidden')) {
+      app.classList.remove('hidden');
+      app.classList.add('grow-animation');
+      setTimeout(function () {
+        app.classList.remove('grow-animation');
+      }, 200);
+    } else {
+      app.classList.add('shrink-animation');
+      setTimeout(function () {
+        app.classList.remove('shrink-animation');
+        app.classList.add('hidden');
+      }, 200);
+    }
+  }
+
+
 }
 
 function maximalize(elementId) {
