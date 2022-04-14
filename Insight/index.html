@@ -17,10 +17,10 @@
 
     </header>
     <main>
-        <div id="safari" class="fullsize">
+        <div id="safari" class="shadow fullsize">
             <div class="resizer se"> </div>
             <div class="resizer ne"> </div>
-            <div class="safari-panel">
+            <div class="panel">
                 <div class="dots">
                     <div class="dot red"></div>
                     <div class="dot yellow" onclick="showApp('safari')"></div>
@@ -43,7 +43,18 @@
                 </div>
             </div>
         </div>
-        <div id="appstore" class="hidden">
+        <div id="mail" class="shadow windowed hidden">
+            <div class="resizer se"> </div>
+            <div class="resizer ne"> </div>
+            <div class="panel">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow" onclick="showApp('mail')"></div>
+                    <div class="dot green" onclick="maximalize('mail')"></div>
+                </div>
+            </div>
+        </div>
+        <div id="appstore" class="hidden place">
             
         </div>
 
@@ -51,8 +62,7 @@
     <footer>
         <div class="main-panel place">
             <button class="icon safari" draggable="true" onclick="showApp('safari')"></button>
-            <button class="icon mail" draggable="true"
-                onclick="window.location.href='mailto:misuraskate@seznam.cz?subject=ahoj'"></button>
+            <button class="icon mail" draggable="true" onclick="showApp('mail')"></button>
             <button class="icon github" draggable="true"
                 onclick="window.location.href='https://github.com/Denisprosim'"></button>
             <button class="icon appstore" onclick="showApp('appstore')"></button>

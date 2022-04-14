@@ -1,47 +1,60 @@
 const draggables = document.querySelectorAll('.icon');
 const containers = document.querySelectorAll('.place');
 const appContainer = document.getElementById('appstore');
-const safariPanel = document.querySelector('.safari-panel')
-const safari = document.getElementById('safari');
+const panels = document.querySelectorAll('.panel')
+
 const boxes = document.querySelectorAll('.box');
 const resizers = document.querySelectorAll('.resizer');
 
-safariPanel.addEventListener('mousedown', mousedown);
+
 
 let isResizing = false;
 
-function mousedown(e) {
-  window.addEventListener('mousemove', mousemove);
-  window.addEventListener('mouseup', mouseup);
+function makeActive(element) {
+  var activeElement = document.querySelector('.active');
+  if (activeElement !== null) {
+    activeElement.classList.remove('active');
+  }
+  element.classList.add('active');
+}
 
-  let prevX = e.clientX;
-  let prevY = e.clientY;
-
-  function mousemove(e) {
-    e.preventDefault();
-    if (!isResizing) {
-      let newX = prevX - e.clientX;
-      let newY = prevY - e.clientY;
-
-      const rect = safari.getBoundingClientRect();
-
-      safari.style.left = rect.left - newX + "px";
-      if(e.clientY < 0) {   
-        safari.style.top = 0;
-      } else {
-        safari.style.top = rect.top - newY + "px";
+for (let panel of panels) {
+  panel.addEventListener('mousedown', mousedown);
+  function mousedown(e) {
+    let block = e.target.parentNode;
+    window.addEventListener('mousemove', mousemove);
+    window.addEventListener('mouseup', mouseup);
+    makeActive(block);
+    let prevX = e.clientX;
+    let prevY = e.clientY;
+  
+    function mousemove(e) {
+      e.preventDefault();
+      if (!isResizing) {
+        let newX = prevX - e.clientX;
+        let newY = prevY - e.clientY;
+  
+        const rect = block.getBoundingClientRect();
+  
+        block.style.left = rect.left - newX + "px";
+        if(e.clientY < 0) {   
+          block.style.top = 0;
+        } else {
+          block.style.top = rect.top - newY + "px";
+        }
+  
+        prevX = e.clientX;
+        prevY = e.clientY;
       }
-
-      prevX = e.clientX;
-      prevY = e.clientY;
+    }
+  
+    function mouseup() {
+      window.removeEventListener('mousemove', mousemove);
+      window.removeEventListener('mouseup', mouseup);
     }
   }
-
-  function mouseup() {
-    window.removeEventListener('mousemove', mousemove);
-    window.removeEventListener('mouseup', mouseup);
-  }
 }
+
 
 for (let resizer of resizers) {
   resizer.addEventListener('mousedown', mousedown);
@@ -113,6 +126,7 @@ function showApp(elementId) {
     if (app.classList.contains('hidden')) {
       app.classList.remove('hidden');
       app.classList.add('grow-animation');
+      makeActive(app);
       setTimeout(function () {
         app.classList.remove('grow-animation');
       }, 200);
@@ -124,8 +138,6 @@ function showApp(elementId) {
       }, 200);
     }
   }
-
-
 }
 
 function maximalize(elementId) {
@@ -134,10 +146,10 @@ function maximalize(elementId) {
     app.classList.remove('fullsize');
     app.classList.add('windowed');
   } else {
-    safari.style.left = null;
-    safari.style.top = null;
-    safari.style.width = null;
-    safari.style.height = null;
+    app.style.left = null;
+    app.style.top = null;
+    app.style.width = null;
+    app.style.height = null;
     app.classList.add('fullsize');
     app.classList.remove('windowed');
   }
