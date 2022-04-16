@@ -15,9 +15,7 @@ body {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     height: auto;
-    background-color:rgba(49, 49, 49, 0.534);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color:rgba(49, 49, 49, 0.80);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -25,8 +23,7 @@ body {
     border: 1px solid rgba(185, 181, 181, 0.507);
     gap: 0.5rem;
     border-radius: 15px;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
-     0 4px 18px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 25px 20px -20px;
 }
 .shadow {
     box-shadow: rgba(0, 0, 0, 0.90) 0px 22px 70px 4px;
@@ -57,7 +54,7 @@ body {
 }
 @keyframes shrink {
     0% {
-        transform: scale(1);    
+        transform: scale(1);  
     }
     100% {
         transform: scale(0);
@@ -113,8 +110,8 @@ body {
 }
 .resizer {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
     z-index: 1;
     background-color: red;
 }
@@ -124,9 +121,16 @@ body {
     cursor: se-resize;
 }
 .ne {
-    top: +1px;
     right: +1px;
     cursor: ne-resize;
+}
+.sw {
+    bottom: +1px;
+    background-color: #51c02b;
+    cursor: sw-resize;
+}
+.nw {
+    cursor: nw-resize;
 }
 .dots {
     position: relative;
