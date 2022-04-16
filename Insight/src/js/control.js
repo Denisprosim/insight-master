@@ -13,6 +13,7 @@ function makeActive(element) {
   if (activeElement !== null) {
     activeElement.classList.remove('active');
   }
+  console.log('chyba');
   element.classList.add('active');
 }
 
@@ -33,7 +34,9 @@ for (let panel of panels) {
     let block = e.target.parentNode;
     window.addEventListener('mousemove', mousemove);
     window.addEventListener('mouseup', mouseup);
-    makeActive(block);
+    if (!block.classList.contains('dots') && !block.classList.contains('panel')) {
+      makeActive(block);
+    }
     let prevX = e.clientX;
     let prevY = e.clientY;
   
@@ -165,6 +168,7 @@ function showApp(elementId) {
 function maximalize(elementId) {
   var app = document.getElementById(elementId);
   if (app.classList.contains('fullsize')) {
+    makeActive(app);
     app.classList.remove('fullsize');
     app.classList.add('windowed');
   } else {
@@ -172,8 +176,8 @@ function maximalize(elementId) {
     app.style.top = null;
     app.style.width = null;
     app.style.height = null;
-    app.classList.add('fullsize');
     makeActive(app);
+    app.classList.add('fullsize');
     app.classList.remove('windowed');
   }
 }
