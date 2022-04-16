@@ -13,7 +13,6 @@ function makeActive(element) {
   if (activeElement !== null) {
     activeElement.classList.remove('active');
   }
-  console.log('chyba');
   element.classList.add('active');
 }
 
@@ -87,23 +86,16 @@ for (let resizer of resizers) {
       const rect = block.getBoundingClientRect();
 
       if (currentResizer.classList.contains('se')) {
-          block.style.width = (e.clientX - block.offsetLeft) + 'px';
-          block.style.height = (e.clientY - block.offsetTop) + 'px';     
-      }
-
-      if (currentResizer.classList.contains('ne')) {
-        block.style.width = (e.clientX - block.offsetLeft) + 'px';
-        block.style.height = (e.clientY - block.offsetTop) + 'px';    
-      }
-
-      if (currentResizer.classList.contains('sw')) {
         block.style.width = (e.clientX - block.offsetLeft) + 'px';
         block.style.height = (e.clientY - block.offsetTop) + 'px'; 
-        block.style.left = (block.offsetLeft - e.clientX) + 'px';
       }
 
-      if (currentResizer.classList.contains('nw')) {
+      if (currentResizer.classList.contains('e')) {
         block.style.width = (e.clientX - block.offsetLeft) + 'px';   
+      }
+
+      if (currentResizer.classList.contains('s')) {
+        block.style.height = (e.clientY - block.offsetTop) + 'px'; 
       }
 
       prevX = e.clientX;

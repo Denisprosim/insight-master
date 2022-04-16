@@ -1,6 +1,6 @@
 .safari-content {
     height: calc(100% - 30px);
-    min-height: inherit;
+    min-height: 170px;
     overflow-y: auto;    
     background-color: white;
 }

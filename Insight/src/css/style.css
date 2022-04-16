@@ -48,17 +48,18 @@ body {
         transform: scale(1); 
     }
 }
-.shrink-animation {
-    
+.shrink-animation {  
     animation: shrink 0.2s ease-in;
 }
 @keyframes shrink {
     0% {
+        position: absolute;
         transform: scale(1);  
     }
     100% {
         transform: scale(0);
         display: none;
+        color: red;
     }
 }
 .windowed {
@@ -72,15 +73,6 @@ body {
     border: 1px solid rgba(185, 181, 181, 0.507);
     border-radius: 10px;
 }
-@keyframes shrinkWindowed {
-    0% {
-        transform: scale(1);    
-    }
-    100% {
-        transform: scale(0);
-        display: none;
-    }
-}
 .fullsize {
     animation: growFullsize 0.2s ease-out; 
     position: fixed;
@@ -90,7 +82,7 @@ body {
     height: 100vh;   
 }
 @keyframes growFullsize {
-    0% {
+    0% {       
         transform: scale(0);    
     }
     100% {
@@ -105,29 +97,29 @@ body {
     border-radius: 10px 10px 0 0;
     background-color:#343537;
     background-color: linear-gradient(#323234, #38393b);
-    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
-    
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);  
 }
 .resizer {
     position: absolute;
     width: 5px;
     height: 5px;
     z-index: 1;
-    background-color: red;
+    background-color: transparent;
 }
 .se {
-    bottom: +1px;
-    right: +1px;
+    bottom: 0px;
+    right: 0px;
     cursor: se-resize;
 }
-.ne {
-    right: +1px;
-    cursor: ne-resize;
+.e {
+    height: 99%;
+    right: 0px;
+    cursor: e-resize;
 }
-.sw {
-    bottom: +1px;
-    background-color: #51c02b;
-    cursor: sw-resize;
+.s {
+    bottom: 0px;
+    width: 99%;
+    cursor: s-resize;
 }
 .nw {
     cursor: nw-resize;
