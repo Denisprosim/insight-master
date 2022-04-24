@@ -16,6 +16,13 @@ function makeActive(element) {
   element.classList.add('active');
 }
 
+function hideInactive(element) {
+  var activeElement = document.querySelector('.active');
+  if (activeElement !== element && element.classList.contains('fullsize')) {
+    activeElement.classList.add('hidden');
+  }
+}
+
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
   return (
@@ -133,7 +140,7 @@ containers.forEach(container => {
 function showApp(elementId) {
   var app = document.getElementById(elementId);
 
-  if(elementId == "appstore") {
+  if (elementId == "appstore") {
     if (app.classList.contains('hidden')) {
       app.classList.remove('hidden');
     } else {
@@ -143,6 +150,7 @@ function showApp(elementId) {
     if (app.classList.contains('hidden')) {
       app.classList.remove('hidden');
       app.classList.add('grow-animation');
+      hideInactive(app);
       makeActive(app);
       setTimeout(function () {
         app.classList.remove('grow-animation');

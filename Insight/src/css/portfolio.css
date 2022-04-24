@@ -1,6 +1,8 @@
 .safari-content {
     height: calc(100% - 30px);
     min-height: 170px;
-    overflow-y: auto;    
+    overflow-y: auto;
     background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

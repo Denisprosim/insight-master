@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/portfolio.css">
     <script src="./src/js/control.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="./src/css/smallscreen.css">
 
     <title>Insight</title>
 </head>
@@ -17,7 +21,7 @@
 
     </header>
     <main>
-        <div id="safari" class="shadow fullsize">
+        <div id="safari" class="shadow fullsize active">
             <div class="resizer se"> </div>
             <div class="resizer e"> </div>
             <div class="resizer s"> </div>
@@ -29,8 +33,8 @@
                 </div>
             </div>
             <div class="safari-content">
-                <div class="safari-content-header"> 
-                    Denis Mišura                 
+                <div class="safari-content-header">
+                    Denis Mišura
                 </div>
                 <div class="safari-content-main">
                     <p>Jsem studentem oboru aplikované informatiky na VŠE.</p>
@@ -40,11 +44,11 @@
                     <p>Neni mi cizí ani správa a konfigurace serverů Microsoft a Linux.</p>
                     <p>Dokonce jsem se naučil i převádět a rozdělovat IPv4 adresy na papíře :).</p>
                 </div>
-                <div class="safari-content-footer">                   
+                <div class="safari-content-footer">
                 </div>
             </div>
         </div>
-        <div id="mail" class="shadow windowed hidden">
+        <div id="mail" class="shadow fullsize hidden">
             <div class="resizer se"> </div>
             <div class="resizer e"> </div>
             <div class="resizer s"> </div>
@@ -55,9 +59,31 @@
                     <div class="dot green" onclick="maximalize('mail')"></div>
                 </div>
             </div>
+            <form action="https://formsubmit.co/misd01@vse.cz" class="mail-form" method="POST">
+                <div class="mail-contact">
+                    <span class="mail-item">
+                        <label class="mail-label">Jméno:</label>
+                        <input type="text" name="name" required>
+                    </span>
+                    <hr>
+                    <span class="mail-item">
+                        <label class="mail-label">Email:</label>
+                        <input type="email" name="email" required>
+                    </span>
+                    <hr>
+                    <span class="mail-item">
+                        <label class="mail-label">Předmět:</label>
+                        <input type="text" name="subject">
+                    </span>
+                </div>
+                <div class="mail-action">
+                    <input type="text" name="message" placeholder="..." class="mail-message">
+                    <button type="submit">Odeslat</button>
+                </div>
+            </form>
         </div>
         <div id="appstore" class="hidden place">
-            
+
         </div>
 
     </main>
@@ -68,10 +94,11 @@
             <button class="icon github" draggable="true"
                 onclick="window.location.href='https://github.com/Denisprosim'"></button>
             <button class="icon appstore" onclick="showApp('appstore')"></button>
-            <button class="icon youtube" draggable="true" 
+            <button class="icon youtube" draggable="true"
                 onclick="window.location.href='../MyTube/index.html'"></button>
         </div>
     </footer>
 </body>
 <script src="./src/js/main.js"></script>
+
 </html>
